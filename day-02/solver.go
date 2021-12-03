@@ -10,7 +10,7 @@ import (
 
 
 func readData() []string {
-    f, _ := os.Open("input")
+    f, _ := os.Open("input.txt")
     defer f.Close()
 
     data := make([]string, 0)

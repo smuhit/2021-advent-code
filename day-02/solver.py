@@ -1,4 +1,4 @@
-data = [x for x in open('input').read().split('\n')]
+data = [x for x in open('input.txt').read().split('\n')]
 
 # Part 1
 

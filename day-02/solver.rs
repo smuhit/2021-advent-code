@@ -11,7 +11,7 @@ where P: AsRef<Path>, {
 fn read_data() -> Vec<String> {
     let mut data = Vec::new();
 
-    if let Ok(lines) = read_lines("./input") {
+    if let Ok(lines) = read_lines("./input.txt") {
         for line in lines {
             if let Ok(raw_datum) = line {
                 data.push(raw_datum);
