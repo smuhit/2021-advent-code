@@ -22,7 +22,7 @@ print(sum(x[2] for x in low_points) + len(low_points))
 # Part 2
 from functools import reduce
 
-def find_basin_size(x, y, visited=set()):
+def find_basin_size(x, y, visited):
     if x < 0 or x >= max_x:
         return 0
     if y < 0 or y >= max_y:
@@ -37,7 +37,9 @@ def find_basin_size(x, y, visited=set()):
     return count
 
 basin_sizes = []
+visited = set()
 for y, x, _ in low_points:
-    basin_sizes.append(find_basin_size(x, y))
+    if (x, y) not in visited:
+        basin_sizes.append(find_basin_size(x, y, visited))
 basin_sizes.sort(reverse=True)
 print(reduce(lambda a, b: a * b, basin_sizes[:3]))
